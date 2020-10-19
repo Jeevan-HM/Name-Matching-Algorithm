@@ -13,7 +13,7 @@ A local server can be started by running the main.py file by typing the command,
 ```
 python3 main.py
 ```
-# **The working of the REST API**
+# **Working of the Name Matching API**
 
 ## Request
 ```
