@@ -81,9 +81,7 @@ class name_matching(Resource):
         except Exception as e:
             print(e)
             return Response(
-                response=json.dumps(
-                    {"message": "Check Your URL Please!!"}, default=str
-                ),
+                response=json.dumps({"message": "Check Your URL!!"}, default=str),
                 status=404,
                 mimetype="application/json",
             )
