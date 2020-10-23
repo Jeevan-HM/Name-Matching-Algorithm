@@ -35,10 +35,10 @@ try:
 
     class name_matching_test(unittest.TestCase):
         global pass_test_name_1, pass_test_name_2, fail_test_name_1, fail_test_name_2
-        pass_test_name_1 = "Jeevan"
-        pass_test_name_2 = "Jieevann"
-        fail_test_name_1 = "asd"
-        fail_test_name_2 = "asaasdd"
+        pass_test_name_1 = "John"
+        pass_test_name_2 = "J1Ohm"
+        fail_test_name_1 = "John"
+        fail_test_name_2 = "Jacob"
 
         # ? Check if levenshtein passes test cases
         def test_levenshtein_representation_success(self):
