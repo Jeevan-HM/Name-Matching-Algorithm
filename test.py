@@ -111,7 +111,7 @@ try:
 
 
 except Exception as e:
-    print("Somthing went wrong!!".format(e))
+    print("Something went wrong!!".format(e))
 
 
 if __name__ == "__main__":
