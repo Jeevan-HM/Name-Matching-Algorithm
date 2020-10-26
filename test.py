@@ -1,6 +1,3 @@
-from main import soundex
-
-
 try:
     from main import app
     import unittest
@@ -11,7 +8,6 @@ except Exception as e:
     print("Some Modules are Missing".format(e))
 
 try:
-    # *
 
     class funcionality_check(unittest.TestCase):
         # ? Check for response 200
