@@ -62,6 +62,7 @@ class name_matching(Resource):
             else:
                 status = False
                 message = "The names do not match"
+
             json_response = {
                 "raw_input": {"name_1": raw_input_name1, "name_2": raw_input_name2},
                 "filtered_input": {
@@ -81,14 +82,14 @@ class name_matching(Resource):
         except Exception as e:
             print(e)
             return Response(
-                response=json.dumps({"message": "Check Your URL!!"}, default=str),
+                response=json.dumps({"message": "Check URL!"}, default=str),
                 status=404,
                 mimetype="application/json",
             )
 
 
 api.add_resource(
-    name_matching, "/name/<string:raw_input_name1>" + "/<string:raw_input_name2>"
+    name_matching, "/name/<string:raw_input_name1>/<string:raw_input_name2>"
 )
 if __name__ == "__main__":
     app.run(debug=True)
