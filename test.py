@@ -84,7 +84,7 @@ try:
     class test_levenshtein_diatance(unittest.TestCase):
 
         # ? Check if levenshtein distance works!
-        def test_levenshtein_representation_success(self):
+        def test_levenshtein_distance_success(self):
             tester = app.test_client(self)
             response = tester.get("/name/" + pass_test_name_1 + "/" + pass_test_name_2)
             data = json.loads(response.get_data(as_text=True))
@@ -100,7 +100,7 @@ try:
             self.assertEqual(assertion_levenshtein_distance, 1)
 
         # ? Check if levenshtein distance fails test case
-        def test_levenshtein_representation_failure(self):
+        def test_levenshtein_distance_failure(self):
             tester = app.test_client(self)
             response = tester.get("/name/" + fail_test_name_1 + "/" + fail_test_name_2)
             data = json.loads(response.get_data(as_text=True))
@@ -117,7 +117,7 @@ try:
             self.assertEqual(assertion_levenshtein_distance, 0)
 
         # ? Check if the levenshtein params are empty
-        def test_levenshtein_representation_failure_no_params(self):
+        def test_levenshtein_distancefailure_no_params(self):
             tester = app.test_client(self)
             response = tester.get("/name/" + empty_input_1 + "/" + empty_input_2)
             assertion_levenshtein_distance = 1
