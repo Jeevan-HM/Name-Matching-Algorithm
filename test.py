@@ -19,7 +19,6 @@ try:
     empty_input_2 = ""
 
     class url_funcionality_check(unittest.TestCase):
-
         # ? Check for response 200
         def test_status_code_get(self):
             tester = app.test_client(self)
@@ -33,7 +32,7 @@ try:
             tester = app.test_client(self)
             response = tester.post("/name/%s/%s")
             statuscode = response.status_code
-            print("[Failed]POST method not allowed-" + str(statuscode))
+            print("[Success]POST method not allowed-" + str(statuscode))
             self.assertEqual(statuscode, 405)
 
         # ? Response for DELETE requests
@@ -41,7 +40,7 @@ try:
             tester = app.test_client(self)
             response = tester.delete("/name/%s/%s")
             statuscode = response.status_code
-            print("[Failed]DELETE method not allowed-" + str(statuscode))
+            print("[Success]DELETE method not allowed-" + str(statuscode))
             self.assertEqual(statuscode, 405)
 
         # ? Check if response type is JSON
@@ -58,7 +57,7 @@ try:
             url = "/"
             response = tester.get(url)
             statuscode = response.status_code
-            print("[Failed]URL doesn't exist!")
+            print("[Success]URL doesn't exist!")
             self.assertEqual(statuscode, 404)
 
         # ? Check if URL has less than the required params
@@ -67,7 +66,7 @@ try:
             url = "/name/"
             response = tester.get(url)
             statuscode = response.status_code
-            print("[Failed]URL has less/no params!")
+            print("[Success]URL has less/no params!")
             self.assertEqual(statuscode, 404)
 
         # ? Check if URL has more than one params
@@ -78,7 +77,7 @@ try:
                 "/name/" + fail_test_name_1 + "/" + fail_test_name_2 + "/"
             )
             statuscode = response.status_code
-            print("[Failed]URL has too many params!")
+            print("[Success]URL has too many params!")
             self.assertEqual(statuscode, 404)
 
     # ? Check test cases for levenshtein distance
@@ -111,7 +110,7 @@ try:
             if levenshtein_distance > 2 and message == "The names do not match":
                 assertion_levenshtein_distance = 0
             print(
-                "[Failed]levenshtein distance [%d] between '%s' and '%s'"
+                "[Success]levenshtein distance [%d] between '%s' and '%s'"
                 % (levenshtein_distance, fail_test_name_1, fail_test_name_2)
             )
 
@@ -124,7 +123,7 @@ try:
             assertion_levenshtein_distance = 1
             if empty_input_1 == "" or empty_input_2 == "":
                 assertion_levenshtein_distance = 0
-            print("[Failed]Both Params are empty for levenshtein distance")
+            print("[Success]Both Params are empty for levenshtein distance")
             self.assertEqual(assertion_levenshtein_distance, 0)
 
         # ? Check if the levenshtein first param is empty
@@ -134,7 +133,7 @@ try:
             assertioin_soundex_represent = 1
             if empty_input_1 == "" or pass_test_name_1 == "":
                 assertioin_soundex_represent = 0
-            print("[Failed]First Param is empty for soundex representation")
+            print("[Success]First Param is empty for levenshtein distance")
             self.assertEqual(assertioin_soundex_represent, 0)
 
         # ? Check if the levenshtein second param is empty
@@ -144,7 +143,7 @@ try:
             assertioin_soundex_represent = 1
             if pass_test_name_2 == "" or empty_input_2 == "":
                 assertioin_soundex_represent = 0
-            print("[Failed]Second Param is empty for soundex representation")
+            print("[Success]Second Param is empty for levenshtein distance")
             self.assertEqual(assertioin_soundex_represent, 0)
 
     # ? Check test cases for soundex
@@ -185,7 +184,7 @@ try:
             if soundex_name_1 != soundex_name_2 and message == "The names do not match":
                 assertioin_soundex_represent = 0
             print(
-                "[Failed]Soundex representation is '%s'[%s] and '%s'[%s]"
+                "[Success]Soundex representation is '%s'[%s] and '%s'[%s]"
                 % (
                     soundex_name_1,
                     fail_test_name_1,
@@ -202,7 +201,7 @@ try:
             assertioin_soundex_represent = 1
             if empty_input_1 == "" or empty_input_2 == "":
                 assertioin_soundex_represent = 0
-            print("[Failed]Both Params are empty for soundex representation")
+            print("[Success]Both Params are empty for soundex representation")
             self.assertEqual(assertioin_soundex_represent, 0)
 
         # ? Check if first soundex param is empty
@@ -212,7 +211,7 @@ try:
             assertioin_soundex_represent = 1
             if empty_input_1 == "":
                 assertioin_soundex_represent = 0
-            print("[Failed]First Param is empty for soundex representation")
+            print("[Success]First Param is empty for soundex representation")
             self.assertEqual(assertioin_soundex_represent, 0)
 
         # ? Check is second soundex param is empty
@@ -222,7 +221,7 @@ try:
             assertioin_soundex_represent = 1
             if empty_input_2 == "":
                 assertioin_soundex_represent = 0
-            print("[Failed]Second Param is empty for soundex representation")
+            print("[Success]Second Param is empty for soundex representation")
             self.assertEqual(assertioin_soundex_represent, 0)
 
 
