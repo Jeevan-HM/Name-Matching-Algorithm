@@ -57,7 +57,7 @@ try:
             url = "/"
             response = tester.get(url)
             statuscode = response.status_code
-            print("[Success]URL doesn't exist!")
+            print("[Success]URL '/' doesn't exist!")
             self.assertEqual(statuscode, 404)
 
         # ? Check if URL has less than the required params
@@ -94,7 +94,7 @@ try:
             if levenshtein_distance <= 2 and message == "The names match":
                 assertion_levenshtein_distance = 1
             print(
-                "[Success]levenshtein distance [%d] between '%s' and '%s'"
+                "[Success]Names match, levenshtein distance [%d] between '%s' and '%s'"
                 % (levenshtein_distance, pass_test_name_1, pass_test_name_2)
             )
             self.assertEqual(assertion_levenshtein_distance, 1)
@@ -110,7 +110,7 @@ try:
             if levenshtein_distance > 2 and message == "The names do not match":
                 assertion_levenshtein_distance = 0
             print(
-                "[Success]levenshtein distance [%d] between '%s' and '%s'"
+                "[Success]Names don't match, levenshtein distance [%d] between '%s' and '%s'"
                 % (levenshtein_distance, fail_test_name_1, fail_test_name_2)
             )
 
@@ -161,7 +161,7 @@ try:
                 assertioin_soundex_represent = 1
 
             print(
-                "[Success]Soundex representation is '%s'[%s] and '%s'[%s]"
+                "[Success]Names match, Soundex representation is '%s'[%s] and '%s'[%s]"
                 % (
                     soundex_name_1,
                     pass_test_name_1,
@@ -184,7 +184,7 @@ try:
             if soundex_name_1 != soundex_name_2 and message == "The names do not match":
                 assertioin_soundex_represent = 0
             print(
-                "[Success]Soundex representation is '%s'[%s] and '%s'[%s]"
+                "[Success]Names don't match, Soundex representation is '%s'[%s] and '%s'[%s]"
                 % (
                     soundex_name_1,
                     fail_test_name_1,
