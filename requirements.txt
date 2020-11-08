@@ -5,8 +5,4 @@ pyenchant==3.1.1
 Flask-RESTful==0.3.8
 jellyfish==0.8.2
 python-Levenshtein==0.12.0
-<<<<<<< HEAD
-=======
-unittest
->>>>>>> bce9a93061222c0832649b97ce783ec6d0bcfe95
-dictor
+dictor==0.1.7

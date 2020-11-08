@@ -47,6 +47,8 @@ def filter_unicode_characters(data):
         "DR.",
         "SH",
         "SH.",
+        "SO",
+        "DO",
     ]
     for i in range(len(prefixes)):
         prefixes[i] = prefixes[i].lower()
