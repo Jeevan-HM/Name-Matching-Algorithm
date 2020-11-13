@@ -128,7 +128,6 @@ class name_matching(Resource):
                 "status": status,
                 "message": message,
             }
-
             return jsonify(json_response)
 
         except Exception as e:

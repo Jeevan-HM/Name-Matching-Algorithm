@@ -157,4 +157,9 @@ dmypy.json
 cython_debug/
 =======
 .vscode/
+<<<<<<< HEAD
 __pycache__/main.cpython-38.pyc
+=======
+__pycache__/main.cpython-38.pyc
+>>>>>>> bce9a93061222c0832649b97ce783ec6d0bcfe95
+>>>>>>> 103576703810992a7e0f599303a5defc430e0ad3
